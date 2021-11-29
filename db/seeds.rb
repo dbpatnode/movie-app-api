@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Movie.destroy_all
+
+10.times do
+    Movie.create(
+      title: Faker::Movie.title,
+      plot: Faker::Lorem.paragraph,
+      release_date: Faker::Date.birthday(18, 65),
+    )
+  end
+
+  puts 'seeds seeded!'
